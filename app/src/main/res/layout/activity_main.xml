@@ -1,49 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical" >
 
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/lstContacts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:fastScrollAlwaysVisible="true"
-            android:fastScrollEnabled="true"
-            android:scrollbarStyle="outsideOverlay"></ListView>
-
-        <TextView
-            android:id="@+id/dialog"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            android:background="#9DDE76"
-            android:gravity="center"
-            android:textColor="#ffffffff"
-            android:textSize="30dp"
-            android:visibility="invisible" />
-
-        <com.forever.contacttest.SideBar
-            android:id="@+id/sideBar"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:visibility="gone"/>
-    </RelativeLayout>
+    <ListView
+        android:id="@+id/contacts_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:scrollbars="none"
+        android:fadingEdge="none" >
+    </ListView>
 
     <LinearLayout
         android:id="@+id/title_layout"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
         android:background="#303030" >
 
         <TextView
@@ -55,4 +31,35 @@
             android:textColor="#ffffff"
             android:textSize="13sp" />
     </LinearLayout>
-</LinearLayout>
+
+    <Button
+        android:id="@+id/alphabetButton"
+        android:layout_width="20dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/a_z" />
+
+    <com.forever.contacttest.SideBar
+        android:id="@+id/sideBar"
+        android:layout_width="20dp"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/section_toast_layout"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/section_toast"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/section_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

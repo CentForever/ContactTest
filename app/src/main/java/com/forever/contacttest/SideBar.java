@@ -91,7 +91,7 @@ public class SideBar extends View {
                 if (oldChoose != c) {
                     if (c >= 0 && c < b.length) {
                         if (listener != null) {
-                            listener.onTouchingLetterChanged(b[c]);
+                            listener.onTouchingLetterChanged(b[c],c);
                         }
                         if (mTextDialog != null) {
                             mTextDialog.setText(b[c]);
@@ -121,7 +121,7 @@ public class SideBar extends View {
      * 回调接口
      */
     public interface OnTouchingLetterChangedListener {
-        void onTouchingLetterChanged(String s);
+        void onTouchingLetterChanged(String s,int position);
     }
 
 }

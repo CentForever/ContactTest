@@ -6,7 +6,7 @@
     <LinearLayout
         android:id="@+id/sort_key_layout"
         android:layout_width="fill_parent"
-        android:layout_height="18dip"
+        android:layout_height="20dp"
         android:background="#303030" >
 
         <TextView
