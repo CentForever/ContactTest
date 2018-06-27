@@ -20,16 +20,31 @@ public class CAdapter extends CursorAdapter {
     }
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        return mInflater.inflate(R.layout.contact_list_element, parent, false);
+
+                   ViewHolder viewHolder= new ViewHolder();
+
+           View view=mInflater.inflate(R.layout.contact_list_element, parent, false);
+
+           viewHolder.tvCOntactName = (TextView) view
+                .findViewById(R.id.contact_name);
+           viewHolder.tvSeparator= (TextView) view
+                .findViewById(R.id.separator);
+           view.setTag(viewHolder);
+
+            return view;
+
     }
+
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvCOntactName = (TextView) view
-                .findViewById(R.id.contact_name);
-        TextView tvSeparator= (TextView) view
-                .findViewById(R.id.separator);
-        tvCOntactName.setText(cursor.getString(cursor
+          ViewHolder viewHolder=(ViewHolder) view.getTag();
+        viewHolder.tvCOntactName.setText(cursor.getString(cursor
                 .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)));
+
+    }
+
+    class ViewHolder {
+        TextView tvCOntactName,tvSeparator;
     }
 }
